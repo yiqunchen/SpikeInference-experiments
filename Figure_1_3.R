@@ -5,9 +5,11 @@ library(tidyverse)
 library(latex2exp)
 library(ggpubr)
 
-helper_function_dir <- "./"
-input_dir <- "~/Desktop/input_files/"
-plot_output_dir <- "~/Desktop/plot_output/"
+helper_function_dir <- "~/Desktop/SpikeInference-experiments/"
+output_dir <- "~/Desktop/SpikeInference-experiments/input_files/"
+input_dir <- "~/Desktop/SpikeInference-experiments/input_files/"
+plot_output_dir <- "~/Desktop/SpikeInference-experiments/plot_output/"
+
 source(paste0("spike_inf_helper.R"))
 
 ###### type I error control

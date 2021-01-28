@@ -5,14 +5,17 @@
 # need to tune lambda so that we have abt the right # of cps
 
 ###### no cp at all ######
-set.seed(1995)
 library(SpikeInference)
-helper_function_dir <- "~/Desktop/"
-output_dir <- "~/Desktop/input_files/"
-source(paste0(helper_function_dir,"spike_inf_helper.R"))
+
+helper_function_dir <- "~/Desktop/SpikeInference-experiments/"
+output_dir <- "~/Desktop/SpikeInference-experiments/input_files/"
+input_dir <- "~/Desktop/SpikeInference-experiments/input_files/"
+plot_output_dir <- "~/Desktop/SpikeInference-experiments/plot_output/"
+
+source(paste0("spike_inf_helper.R"))
 
 # parameters to vary
-
+set.seed(1995)
 sim_times <- 500
 gam <- 0.98
 h_tol <- 2

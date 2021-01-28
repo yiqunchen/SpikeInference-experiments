@@ -2,7 +2,7 @@ library(tidyverse)
 library(latex2exp)
 library(ggpubr)
 library(SpikeInference)
-plot_output_dir <- "~/Desktop/plot_output/"
+plot_output_dir <- "~/Desktop/SpikeInference-experiments/plot_output/"
 
 construct_v_norm <- function(thj, window_size, gam) {
   tL <- max(1, thj-window_size+1)

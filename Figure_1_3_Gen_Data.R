@@ -2,8 +2,11 @@
 set.seed(1995)
 library(SpikeInference)
 library(tidyverse)
-helper_function_dir <- "~/Desktop/"
-output_dir <- "~/Desktop/input_files/"
+
+helper_function_dir <- "~/Desktop/SpikeInference-experiments/"
+output_dir <- "~/Desktop/SpikeInference-experiments/input_files/"
+input_dir <- "~/Desktop/SpikeInference-experiments/input_files/"
+
 source(paste0(helper_function_dir,"spike_inf_helper.R"))
 
 # try_fit <- estimate_spike_by_spike_number(curr_sim, decay_rate = gam, target_firing_rate = 0.01, 

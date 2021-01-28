@@ -4,8 +4,8 @@ library(ggpubr)
 library(RColorBrewer)
 library(shades)
 
-input_dir <- "~/Desktop/input_files/"
-plot_output_dir <- "~/Desktop/plot_output/"
+input_dir <- "~/Desktop/SpikeInference-experiments/input_files/"
+plot_output_dir <- "~/Desktop/SpikeInference-experiments/plot_output/"
 
 
 sim_files_h_1 <- list.files(path = input_dir,
