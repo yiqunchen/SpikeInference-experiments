@@ -10,7 +10,7 @@ output_dir <- "~/Desktop/SpikeInference-experiments/input_files/"
 input_dir <- "~/Desktop/SpikeInference-experiments/input_files/"
 plot_output_dir <- "~/Desktop/SpikeInference-experiments/plot_output/"
 
-source(paste0("spike_inf_helper.R"))
+source(paste0(helper_function_dir,"spike_inf_helper.R"))
 
 ###### type I error control
 gam <- 0.98
