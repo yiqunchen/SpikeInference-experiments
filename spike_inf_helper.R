@@ -213,3 +213,75 @@ corr_metric <- function(times_x, times_y, factor) {
 }
 
 
+cppFunction('double vanRossumDist_cpp(NumericVector u, NumericVector v, double tau) {
+            int len_u = u.size();
+            int len_v = v.size();
+            double total = 0;
+
+            for(int i = 0; i < len_u; ++i) {
+            for (int j = 0; j < len_u; ++j){
+            total += exp(-abs(u[i]-u[j])/tau);
+            }
+            }
+
+            for(int i = 0; i < len_u; ++i) {
+            for (int j = 0; j < len_v; ++j){
+            total -= 2*exp(-abs(u[i]-v[j])/tau);
+            }
+            }
+
+
+            for(int i = 0; i < len_v; ++i) {
+            for (int j = 0; j < len_v; ++j){
+            total += exp(-abs(v[i]-v[j])/tau);
+            }
+          }
+
+            return total;
+        }')
+
+
+
+
+cppFunction('double VictorPurpuraDist_cpp(NumericVector u, NumericVector v, double cost) {
+
+            int len_u = u.size();
+            int len_v = v.size();
+            double total = 0;
+            double choice_1, choice_2, choice_3;
+
+            if (cost == 0){
+              if(len_u >= len_v){
+                return(len_u-len_v);
+              }else{
+                return(len_v-len_u);
+              }
+            }
+
+            NumericMatrix cost_mat(len_u+1, len_v+1);
+
+            for (int i = 0; i<= len_u; i++){
+                cost_mat(i,0) = i;
+            }
+            for (int i = 0; i<= len_v; i++){
+                cost_mat(0,i) = i;
+            }
+
+            for (int i = 1; i <= len_u; i++){
+              for (int j = 1; j <= len_v; j++){
+                choice_1 = cost_mat(i-1,j) + 1;
+                choice_2 = cost_mat(i,j-1) + 1;
+                if (u[i-1]-v[j-1] >= 0){
+                  choice_3 = cost_mat(i-1, j-1) + cost*(u[i-1]-v[j-1]);
+                }else{
+                  choice_3 = cost_mat(i-1, j-1) + cost*(-u[i-1]+v[j-1]);
+                }
+
+                cost_mat(i,j) = std::min(choice_1, std::min(choice_2, choice_3));
+              }
+            }
+
+            total = cost_mat(len_u,len_v);
+            return total;
+            }')
+

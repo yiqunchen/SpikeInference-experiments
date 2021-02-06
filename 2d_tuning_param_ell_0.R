@@ -61,8 +61,8 @@ for (curr_exp_num in exp_num_list){
         
         current_fit_half <- spike_estimates(calcium_1[1:T_half,curr_cell_num] + curr_beta_0,
                                        gam_star, curr_lambda)
-        cat(current_fit_full$cost[length(current_fit_full$cost)],"cost",
-      length(current_fit_full$spikes),"firing","\n") 
+     #   cat(current_fit_full$cost[length(current_fit_full$cost)],"cost",
+     # length(current_fit_full$spikes),"firing","\n") 
         cost_matrix_full[j,k] <- current_fit_full$cost[length(current_fit_full$cost)]
         cost_matrix_half[j,k] <- current_fit_half$cost[length(current_fit_half$cost)]
         
