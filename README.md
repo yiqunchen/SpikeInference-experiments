@@ -1,5 +1,8 @@
 # SpikeInference-experiments
-Code and instructions to reproduce results and figures from the paper "Uncertainty quantification for spikes estimated from calcium imaging data".
+Code and instructions to reproduce results and figures from the paper:
+
+Chen YT, Jewell SW, Witten DM. (2021) [Quantifying uncertainty in spikes estimated from calcium imaging data](http://arxiv.org/abs/2103.07818.
+). arXiv:2103.0781 [statME].
 
 ### Step-by-step instructions for reproducing figures
 #### Note that all the R codes assume that the default working directory is `~/Desktop/SpikeInference-experiments` which might not be the case. Please double check your working directories and modify the code accordingly (e.g., if you are running them on a computing cluster).
