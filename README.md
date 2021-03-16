@@ -1,7 +1,7 @@
 # SpikeInference-experiments
 Code and instructions to reproduce results and figures from the paper:
 
-Chen YT, Jewell SW, Witten DM. (2021) [Quantifying uncertainty in spikes estimated from calcium imaging data](http://arxiv.org/abs/2103.07818.
+Chen YT, Jewell SW, Witten DM. (2021) [Quantifying uncertainty in spikes estimated from calcium imaging data](https://arxiv.org/abs/2103.07818v1
 ). arXiv:2103.0781 [statME].
 
 ### Step-by-step instructions for reproducing figures
