@@ -120,7 +120,7 @@ set_S <- spike_inference(dat = curr_sim$fl,
                          gam,
                          tuning_parameter = fit_spike$tuning_parameter,
                          window_size = h,
-                         sig = sigma,
+                         sig2 = sigma*sigma,
                          return_conditioning_sets = TRUE,
                          two_sided = FALSE)
 

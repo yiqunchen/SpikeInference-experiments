@@ -35,8 +35,9 @@ fit_p_val_corr <- function(dat, decay_rate, h, best_lam, true_spike, h_spike=h,
   sigma_2_hat <- max(sigma_2_hat_jnfl,sigma_2_hat_mad,sigma_2_hat_calcium)
   
   selective_p_val <- spike_inference(dat = dat, decay_rate = decay_rate,
-                                     tuning_parameter = best_lam, window_size = h,
-                                     sig = sigma_2_hat, 
+                                     tuning_parameter = best_lam, 
+                                     window_size = h,
+                                     sig2 = sigma_2_hat, 
                                      return_conditioning_sets = FALSE,
                                      two_sided = two_sided,
                                      return_ci=FALSE)

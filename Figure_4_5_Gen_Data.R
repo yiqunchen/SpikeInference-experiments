@@ -68,7 +68,7 @@ for (firing_rate in firing_rate_vec){
         inference_spike <- spike_inference(dat = curr_sim$fl, decay_rate = gam,
                                            tuning_parameter = fit_spike$tuning_parameter,
                                            window_size = h,
-                                           sig = sigma*sigma,
+                                           sig2 = sigma*sigma,
                                            return_conditioning_sets = FALSE,
                                            return_ci = TRUE)
 

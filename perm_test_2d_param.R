@@ -115,7 +115,9 @@ for (h_select in h_select_seq){
                                      gam_star, curr_lambda)$estimated_calcium
       
       test_positions <- spike_inference(calcium_1[1:T_end,curr_cell_num]+beta_0_star,
-                                        gam_star, curr_lambda, window_size=h_select)
+                                        gam_star,
+                                        curr_lambda, 
+                                        window_size=h_select)
       
       current_cell <- data.frame(calcium = calcium_1[1:T_end,curr_cell_num]+beta_0_star, 
                                  spike = spike_1[1:T_end,curr_cell_num],

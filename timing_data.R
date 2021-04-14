@@ -25,8 +25,10 @@ for (h in h_seq){
     estimated_spike_nums[i] <- length(fit_spike$change_pts)
     
     curr_time <- system.time(inf_spike <- spike_inference(dat = curr_sim$fl, decay_rate = 0.95, 
-                                         tuning_parameter = 0.3, window_size = h, 
-                                         sig = 0.15, return_conditioning_sets = FALSE))
+                                         tuning_parameter = 0.3, 
+                                         window_size = h, 
+                                         sig2 = 0.15*0.15, 
+                                         return_conditioning_sets = FALSE))
     fit_output[[i]] <- inf_spike
     elasped_time[i] <- curr_time[3]
 

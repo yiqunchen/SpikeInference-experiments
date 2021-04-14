@@ -48,7 +48,8 @@ for (h in c(1,2,10,20)){
     
     positive_selective_spike <- spike_inference(dat = curr_sim$fl, decay_rate = gam,
                                                 tuning_parameter = LAMBDA, window_size = h, 
-                                                sig = sigma*sigma, return_conditioning_sets = FALSE,
+                                                sig2 = sigma*sigma, 
+                                                return_conditioning_sets = FALSE,
                                                 return_ci = FALSE)
     
     selective_pval_vec[[i]] <- positive_selective_spike$pvals

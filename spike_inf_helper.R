@@ -118,14 +118,16 @@ fit_test_set <- function(dat, decay_rate, h, best_lam, true_spike){
   naive_p_result_BH <- spike_naive_test(dat, decay_rate, best_lam[1], sigma_2_hat, window_size=h)
   
   selective_p_val <- spike_inference(dat = dat, decay_rate = decay_rate,
-                                     tuning_parameter = best_lam[6], window_size = h,
-                                     sig = sigma_2_hat, sig_estimation  = "JNFL",
+                                     tuning_parameter = best_lam[6], 
+                                     window_size = h,
+                                     sig2 = sigma_2_hat, 
                                      return_conditioning_sets = FALSE,
                                      return_ci=FALSE)
 
   selective_p_val_BH <- spike_inference(dat = dat, decay_rate = decay_rate,
-                                     tuning_parameter = best_lam[7], window_size = h,
-                                     sig = sigma_2_hat, sig_estimation  = "JNFL",
+                                     tuning_parameter = best_lam[7], 
+                                     window_size = h,
+                                     sig2 = sigma_2_hat, 
                                      return_conditioning_sets = FALSE,
                                      return_ci=FALSE)
 
@@ -133,8 +135,9 @@ fit_test_set <- function(dat, decay_rate, h, best_lam, true_spike){
 
 
   selective_p_val_Bon <- spike_inference(dat = dat, decay_rate = decay_rate,
-                                     tuning_parameter = best_lam[8], window_size = h,
-                                     sig = sigma_2_hat, sig_estimation  = "JNFL",
+                                     tuning_parameter = best_lam[8], 
+                                     window_size = h,
+                                     sig2 = sigma_2_hat, 
                                      return_conditioning_sets = FALSE,
                                      return_ci=FALSE)
 
