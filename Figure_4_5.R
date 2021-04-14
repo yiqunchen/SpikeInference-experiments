@@ -46,7 +46,6 @@ power_plot_01_all_h <- dplyr::bind_rows(power_plot_01_h1,power_plot_01_h2,
                                         power_plot_01_h10, power_plot_01_h20)
 
 
-
 plot_p_val_power <- power_plot_01_all_h %>% 
   filter((pval_vec<1)) %>%
   mutate(cond_power = rejection_pow/detection_prob) %>%
@@ -59,7 +58,6 @@ plot_p_val_power <- power_plot_01_all_h %>%
 
 
 ####
-
 
 p_power <- plot_p_val_power %>%
   filter(one_over_sigma <= 10) %>%
@@ -85,6 +83,7 @@ p_power <- plot_p_val_power %>%
 png(paste0(plot_output_dir,'Figure_4_b','.png'), width = 6,height = 6, res=200,units='in')
 p_power
 dev.off()
+
 
 
 p_detect <- plot_p_val_power %>%

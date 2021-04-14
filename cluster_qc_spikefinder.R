@@ -39,9 +39,7 @@ fit_p_val_corr <- function(dat, decay_rate, h, best_lam, true_spike, h_spike=h,
                                      sig = sigma_2_hat, 
                                      return_conditioning_sets = FALSE,
                                      two_sided = two_sided,
-                                     return_ci=FALSE,
-                                     mu = mu,
-                                     lower_trunc = lower_trunc)
+                                     return_ci=FALSE)
   
   n_cols <- 8
   result <- matrix(0, nrow = length(dat), ncol = n_cols)

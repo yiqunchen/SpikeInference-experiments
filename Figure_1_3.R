@@ -197,7 +197,6 @@ p_plot <- type_1_plot %>%
   geom_abline(intercept = 0, slope = 1)+
   theme_bw() +
   theme(plot.title = element_text(hjust = 0.5,size=20),
-        #text = element_text(family="Times New Roman"),
         legend.position="bottom",
         legend.title = element_text(size=20),
         axis.text = element_text(size=20),

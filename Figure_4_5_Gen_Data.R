@@ -70,8 +70,7 @@ for (firing_rate in firing_rate_vec){
                                            window_size = h,
                                            sig = sigma*sigma,
                                            return_conditioning_sets = FALSE,
-                                           return_ci = TRUE,
-                                           lower_trunc = 0)
+                                           return_ci = TRUE)
 
         spike_pvals <- inference_spike$pvals
         names(spike_pvals) <- inference_spike$change_pts
