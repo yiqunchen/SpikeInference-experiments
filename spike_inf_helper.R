@@ -58,21 +58,6 @@ one_d_binary_search <- function(gcamp, decay_rate, lam_min, lam_max,
   return(lam_star)
 }
 
-estimate_spike_by_spike_number <- function(dat, decay_rate, target_firing_rate, 
-                                           lam_min = 1e-6, lam_max = 1, max_iters=50, tolerance=5){
-  
-  fps = 1 # sampling ratio - default to one
-  gcamp = dat$fl
-  # transform target firing rate into a number of spikes
-  n = length(gcamp)
-  nbin_spike_target = floor(target_firing_rate * n / fps)
-  lam_star = one_d_binary_search(gcamp, decay_rate, lam_min, lam_max,
-                                  nbin_spike_target, max_iters, tolerance)
-  fit = spike_estimates(gcamp, decay_rate, lam_star, 
-                        functional_pruning_out = FALSE)
-  return(fit)
-  
-}
 
 MAD_var_estimator <- function(y, decay_rate){
   lag_1_diff <- (y[2:length(y)]-decay_rate*y[1:(length(y)-1)])/sqrt(2)

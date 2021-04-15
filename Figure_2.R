@@ -48,7 +48,7 @@ if(sigma>=0.5){
   lam_max = 1
 }
 
-fit_spike <- estimate_spike_by_spike_number(curr_sim, 
+fit_spike <- estimate_spike_by_firing_rate(curr_sim, 
                                             decay_rate = gam, target_firing_rate = target_rate, 
                                             lam_min = 1e-7, lam_max = lam_max, max_iters=10,
                                             tolerance=max(5,floor(n*firing_rate*0.05)))

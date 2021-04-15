@@ -59,7 +59,7 @@ for (firing_rate in firing_rate_vec){
           lam_max = 1
         }
 
-        fit_spike <- estimate_spike_by_spike_number(curr_sim,
+        fit_spike <- estimate_spike_by_firing_rate(curr_sim,
                            decay_rate = gam, target_firing_rate = target_rate,
                            lam_min = 1e-7, lam_max = lam_max, max_iters=10,
                            tolerance=max(5,floor(n_length*firing_rate*0.05)))
