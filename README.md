@@ -15,21 +15,21 @@ Rscript install_packages.R
 mkdir -p output_files
 mkdir -p plot_output
 ```
-2. Generate datasets for Figures 1 and 3 (Empirical Selective Type I Error).
+2. Generate datasets for Figures 1 and 3(a)-(b) (Empirical Selective Type I Error).
 ```
 Rscript ./Figure_1_3_Gen_Data.R
 ```
-3. Generate Figures 1 and 3.
+3. Generate Figures 1 and 3(a)-(b).
 ```
 Rscript ./Figure_1_3.R
 ```
-4. Generate datasets for Figures 4 and 5 (Empirical Power and Confidence Interval).
+4. Generate datasets for Figures 3(c)-(d) and 4 (Empirical Power and Confidence Interval).
 ```
-Rscript ./Figure_4_5_Gen_Data.R
+Rscript ./Figure_3_4_Gen_Data.R
 ```
 5. Generate Figures 4 and 5.
 ```
-Rscript ./Figure_4_5.R
+Rscript ./Figure_3_4.R
 ```
 6. Generate Figure 2.
 ```
