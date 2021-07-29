@@ -11,7 +11,6 @@ input_dir <- "~/Desktop/SpikeInference-experiments/input_files/"
 # output_dir <- "~/Desktop/dissertation/ell_0_project/SpikeInference-experiments/input_files/"
 # input_dir <- "~/Desktop/dissertation/ell_0_project/SpikeInference-experiments/input_files/"
 
-
 source(paste0(helper_function_dir,"spike_inf_helper.R"))
 
 pval_vec <- vector("list", length = sim_times)
@@ -53,7 +52,7 @@ for (h in c(1,2,10,20)){
     
     positive_selective_spike <- spike_inference(dat = curr_sim$fl, decay_rate = gam,
                                                 tuning_parameter = LAMBDA, window_size = h, 
-                                                sig2 = sigma*sigma, 
+                                                sig2 = NULL, 
                                                 return_conditioning_sets = FALSE,
                                                 return_ci = FALSE)
     
@@ -67,7 +66,7 @@ for (h in c(1,2,10,20)){
     vtv <- lapply(v_collection, function(v)sum(v*v))
     
     p_val_result <- unlist(lapply(seq_along(vty), function(i)naive_z_test(vty[[i]], vtv[[i]],
-                                                                          sigma2 = sigma*sigma)))
+                                                                          sigma2 = positive_selective_spike$sig2)))
     
     
     naive_pval_vec[[i]] <- p_val_result[unlist(vty)>=0]
@@ -80,6 +79,6 @@ for (h in c(1,2,10,20)){
                         naive_p_val = unlist(naive_pval_vec))
   
   df_plot <- df_plot %>% mutate(h=h) 
-  save(df_plot, file = paste0(output_dir,"Type_1_error_h_",h,'.RData'))
+  save(df_plot, file = paste0(output_dir,"estimated_sigma_Type_1_error_h_",h,'.RData'))
   
 }

@@ -179,8 +179,6 @@ png(paste0(plot_output_dir, 'figure_3_a','.png'), width = 6,height = 6, res=200,
 print(p_naive)
 dev.off()
 
-
-
 p_plot <- type_1_plot %>%
   mutate(h=as.factor(h)) %>%
   group_by(h) %>%
